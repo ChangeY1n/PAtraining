@@ -61,7 +61,7 @@ npx serve .
 如果您觉得这个工具对您的交易复盘有所帮助，欢迎打赏支持！
 
 ### 支付宝
-<img src="./assets/alipay-qr.png" alt="支付宝" width="200">
+<img src="./assets/alipay-qr.jpg" alt="支付宝" width="200">
 
 ### 微信支付
 <img src="./assets/wechat-qr.png" alt="微信支付" width="200">
