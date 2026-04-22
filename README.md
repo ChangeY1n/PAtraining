@@ -32,17 +32,6 @@
 ### 直接使用
 直接在浏览器中打开 `index.html` 文件即可使用。
 
-### 本地部署
-```bash
-# 使用 Python 启动简易服务器
-python -m http.server 8000
-
-# 或使用 Node.js
-npx serve .
-```
-
-然后访问 `http://localhost:8000`
-
 ## 📂 项目结构
 
 ```
