@@ -76,7 +76,7 @@ class ProfessionalTradingTracker {
         const option = {
             tooltip: {
                 trigger: 'axis',
-                formatter: '{b}: ¥{c}'
+                formatter: '{b}: ${c}'
             },
             xAxis: {
                 type: 'category',
@@ -88,7 +88,7 @@ class ProfessionalTradingTracker {
                 type: 'value',
                 axisLabel: {
                     color: '#94a3b8',
-                    formatter: '¥{value}'
+                    formatter: '${value}'
                 },
                 axisLine: { lineStyle: { color: '#475569' } },
                 splitLine: { lineStyle: { color: '#334155' } }
@@ -106,7 +106,7 @@ class ProfessionalTradingTracker {
                     show: true,
                     position: 'top',
                     color: '#e2e8f0',
-                    formatter: '¥{c}'
+                    formatter: '${c}'
                 }
             }],
             grid: { left: '10%', right: '10%', bottom: '15%', top: '10%' }
@@ -343,7 +343,7 @@ class ProfessionalTradingTracker {
         const lotValue = parseFloat(document.getElementById('standard-lot-value').value) || 0;
         const perPipValue = standardLots * lotValue;
         
-        document.getElementById('per-pip-value').textContent = `¥${perPipValue.toFixed(2)}`;
+        document.getElementById('per-pip-value').textContent = `$${perPipValue.toFixed(2)}`;
         return perPipValue;
     }
     
@@ -419,7 +419,7 @@ class ProfessionalTradingTracker {
         const perPipValue = this.calculatePerPipValue();
         const riskValue = riskPips * perPipValue;
         
-        document.getElementById('risk-value').textContent = `¥${riskValue.toFixed(2)}`;
+        document.getElementById('risk-value').textContent = `$${riskValue.toFixed(2)}`;
         return riskValue;
     }
     
@@ -857,7 +857,7 @@ class ProfessionalTradingTracker {
         const stopPips = parseFloat(document.getElementById('stop-pips').textContent) || 0;
         const targetPips = parseFloat(document.getElementById('target-pips').textContent) || 0;
         const riskPips = parseFloat(document.getElementById('risk-pips').textContent) || 0;
-        const perPipValue = parseFloat(document.getElementById('per-pip-value').textContent.replace('¥', '')) || 0;
+        const perPipValue = parseFloat(document.getElementById('per-pip-value').textContent.replace('$', '')) || 0;
         const initialRiskValue = this.calculateRiskValue(); // 初始风险价值
         const actualRiskPercent = this.calculateActualRiskPercent(); // 实际风险百分比
         
@@ -1205,7 +1205,7 @@ class ProfessionalTradingTracker {
                 <td>${transaction.initialTarget.toFixed(4)}</td>
                 <td>${transaction.exitPrice ? transaction.exitPrice.toFixed(4) : '--'}</td>
                 <td class="${profitClass}">
-                    ${profitLoss !== 0 ? '¥' + profitLoss.toFixed(2) : '--'}
+                    ${profitLoss !== 0 ? '$' + profitLoss.toFixed(2) : '--'}
                     ${riskPercentText}
                 </td>
                 <td>
@@ -1333,7 +1333,7 @@ class ProfessionalTradingTracker {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">标准手价格波动：</div>
-                    <div class="detail-value">¥${transaction.standardLotValue?.toFixed(2) || '100.00'} / 点</div>
+                    <div class="detail-value">$${transaction.standardLotValue?.toFixed(2) || '100.00'} / 点</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">交易背景：</div>
@@ -1353,7 +1353,7 @@ class ProfessionalTradingTracker {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">每点价值：</div>
-                    <div class="detail-value">¥${transaction.perPipValue?.toFixed(2) || '0.00'} / 点</div>
+                    <div class="detail-value">$${transaction.perPipValue?.toFixed(2) || '0.00'} / 点</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">开仓价格：</div>
@@ -1381,12 +1381,12 @@ class ProfessionalTradingTracker {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">初始风险价值：</div>
-                    <div class="detail-value">¥${transaction.initialRiskValue?.toFixed(2) || '0.00'}</div>
+                    <div class="detail-value">$${transaction.initialRiskValue?.toFixed(2) || '0.00'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">实际风险：</div>
                     <div class="detail-value">
-                        ¥${transaction.actualRisk?.toFixed(2) || '0.00'}
+                        $${transaction.actualRisk?.toFixed(2) || '0.00'}
                         <span class="${getRiskPercentClass(transaction.actualRiskPercent || 0)}">
                             (${transaction.actualRiskPercent?.toFixed(1) || '0'}% 的初始风险)
                         </span>
@@ -1419,7 +1419,7 @@ class ProfessionalTradingTracker {
                 <div class="detail-row">
                     <div class="detail-label">实际盈亏：</div>
                     <div class="detail-value ${transaction.actualProfitLoss >= 0 ? 'profit' : 'loss'}">
-                        ${transaction.actualProfitLoss ? '¥' + transaction.actualProfitLoss.toFixed(2) : '--'}
+                        ${transaction.actualProfitLoss ? '$' + transaction.actualProfitLoss.toFixed(2) : '--'}
                     </div>
                 </div>
                 <div class="detail-row">
@@ -1524,7 +1524,7 @@ class ProfessionalTradingTracker {
         
         // 更新总盈亏
         const totalPlElement = document.getElementById('total-pl');
-        totalPlElement.textContent = `¥${totalProfitLoss.toFixed(2)}`;
+        totalPlElement.textContent = `$${totalProfitLoss.toFixed(2)}`;
         totalPlElement.className = totalProfitLoss >= 0 ? 'stat-value positive' : 'stat-value negative';
         
         // 更新平均风险回报比
