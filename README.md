@@ -2,6 +2,7 @@
 
 一个专业的交易记录复盘工具，帮助交易者系统化记录每一笔交易，提升交易决策质量。
 线上测试：https://changey1n.github.io/PAtraining/
+进阶版演示视频：https://www.bilibili.com/video/BV1vJo4BCEx5/?vd_source=c038cfb9a1b2d2cb4c9415f5ebba9d14
 
 ## ✨ 功能特点
 
